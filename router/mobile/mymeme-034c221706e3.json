@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "mymeme",
+  "private_key_id": "034c221706e3ed817914c9ddf7ddb53dcb3446c4",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDv+5Zh/7cW1xc8\nIlPr+hMKROoTfXpj2SxXGsFttCqJXXkF64gQ3iMyy3FZAkuw/3nxioBJSXqiR3fo\ngs1Fpa6LFSF5j2YiAR3AvsWt7Mpv/2bHE7uJ76N0i7Ehk2U1ZFy8LG5PO0bSdP3W\nC1ifh/d6fSQ27JcI6hRfAubzDk9dhrpri4KbkOVupa0Qdz7UY50yESB+CKS/vaSq\nz+jcC1YPI2V29cy+xjdymzpiWT3RHtfcd8IEFsKwXMEPqMo9U9Pcu60i8Hwtj71F\nBJ76PIbkBSnUBtiqFhe6tx5LISNMc3VZbHWA9CJlZt6ZhZCD8XkHEJhYHg96Oyoe\n4XYKOC4RAgMBAAECggEABtYo+5O4WIs6GzlzIJbYMgOyk2mQsgV+0OBvQDvQtmcW\nSofiMXDSmeDX0sxQ8bLle28RpoTUXIkirloDlQdaSJYKhRcDttZHTbVhlknXnoct\nG2DBh/Vut6Q/IJC9Yl8AkU/GuLUcmGRC0vUxyiGqeC/Wd0YYK2XXvLktcSEoO6bL\nycL/xBDZrdKE+7zvx2qCb3cGnJ0BsZZTcYaxZ/PGxtjlMKgq/aiqTXesPnx3nTe1\nSpFjd03HA5RQBgRwKe/g/skEyzbO9M0EK+99KFGIyXnoweam7fVRX89T4svgohJR\n4vG65cptxJ/3fe2hqxcF76pTf3PujPocMzk4QtedzQKBgQD/k3yMj/djbb2Xcj6l\no3HvYBNToX5M70psX8KqjDKyjMLVGfOWeFVeNHYICt/HG/vkaaQ6XcmaHKf2Fh+f\nJDMlu9E1emc04WLN4YyswVdbu2Y+npDmbTKmSskIU8lryE0JpvmI0mHv+6Evs7/Y\nQlhGrPPQ6RTaVde15nVFqHDYdwKBgQDwYXrwI+wWjDEO3StdONt8dg8RDw1i1uRW\nndo+ooDrjEtxTIFeeX76IgoWNeuITUsxqZSWgCYsXgxUL1wrLw+Mt76CmIxFkY+q\nA2Ul8Tl7XxkyQx3NaAv8C9/eAT9jVR/7XGQjLwGY+Gli8sgbKCL/P+MHoquxPyxO\n4OIudCtXtwKBgBYtfzZXW9lV8YjN0h/fggiKpsKwFdypOyUSXjscdV3HFzUUzm11\nPbsyBDgIcYi+peoZPLYP42mrKOwS2WWe541TsgDZAVG2aTOCagmnsWP1bBbs/Zfx\nS97gSHefhbADrqOyyJ6V2wfPJxqTl4c1oqFnarTrNPMJVfGj8PM9faVbAoGBAKYd\nJyDWIis+vBQigPoN9Zdf2m+WcFCyYd79fLk2AVNFg0kLbodD/JyMc13/6wEpMOJj\n5xvN+RNF9s0iYVYyUlOTEqMbGixlN9tsNzTuKyP3huj1+p1c3pNR/WVkhVJ2nABP\nS6AIttjoKaPIVMJ3jR/JHXHEV1PIbS0hOQyTGPSnAoGAPpaOwqNxuxijrRXQk1y/\nc4EwYYmeNmDQyf9EOs6QXPmQtCi5S5kInFFDe/cLAF/ZAlOugLr1YXy6IsnCU7do\npfb03YX7AK6ZEyOwVR5MYmhF/bu3fOnOqGGCrHU2W/MSqpj15SBEKdJp4yhP08ek\ndTarNxQhBxbEsObq/JLYJ9E=\n-----END PRIVATE KEY-----\n",
+  "client_email": "uploadmeme@mymeme.iam.gserviceaccount.com",
+  "client_id": "101483589550510428638",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/uploadmeme%40mymeme.iam.gserviceaccount.com"
+}
