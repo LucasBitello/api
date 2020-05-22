@@ -12,22 +12,34 @@ router.post('/perfil', (req, res) => {
     const resolve = jwt.decode(req.headers.authorization)
     Usuario.findOne({_id: resolve.id}).then((usuario) => {
         if(!usuario){
-            res.json({errorUser: "Ops parece que este usuario nom ecxiste"})
+            res.json({errorUser: "Ops houve um erro ou o usuário não existe"})
         }else{
             Postagem.find({responsavel_id: resolve.id}).sort({data: 'asc'}).then((postagens) => {
-                var totalPostagens = postagens.length
-                for(var i = 0; i < totalPostagens; i++){
+                for(var i = 0; i < postagens.length; i++){
                     postagens[i].position = i
                     if(postagens[i].curtidas_id.indexOf(usuario._id) > -1){
                         postagens[i].se_curtiu = true
                     }
                 }
+                userDados = {
+                    _id: usuario._id,
+                    nome: usuario.nome,
+                    usuario: usuario.usuario,
+                    avatar: usuario.avatar,
+                    seguidores: usuario.seguidores,
+                    seguindo: usuario.seguindo,
+                    postagens: usuario.postagens
+                }
                 res.json({
                     postagens: postagens,
-                    usuario: usuario
+                    usuario: userDados
                 })
+            }).catch((erro) => {
+                res.json({errorUser: 'Houve um erro ao mostrar seu perfil', errorAdmin: erro})
             })
         }
+    }).catch((erro) => {
+        res.json({errorUser: 'Houve um erro ao mostrar seu perfil', errorAdmin: erro})
     })
 })
 

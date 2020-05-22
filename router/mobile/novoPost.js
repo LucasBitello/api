@@ -97,7 +97,7 @@ router.post('/deletar/:id', (req, res) => {
             if(pos > -1){
                 posts.split(pos, 1)
             }
-            Postagem.findByIdAndDelete(req.params.id).then((ok) => {
+            Postagem.findByIdAndDelete(req.params.id).then(() => {
                 Usuario.findOneAndUpdate({_id: resolve.id}, {postagens: posts}).then(()=> {
                     res.json({sucesso: 'deletado'})
                 }).catch((erro) => {

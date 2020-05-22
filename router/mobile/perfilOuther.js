@@ -11,7 +11,7 @@ const Postagem = mongoose.model('postagens')
 router.post('/perfil/:usuario', (req, res) => {
     Usuario.findOne({usuario: req.params.usuario}).then((usuario) => {
         if(!usuario){
-            res.json({errorUser: "Ops parece que este usuario nom ecxiste"})
+            res.json({errorUser: "Ops parece que este usuario não existe"})
         }else{
             Postagem.find({responsavel_id: usuario._id}).sort({data: 'asc'}).then((postagens) => {
                 var totalPostagens = postagens.length
@@ -22,6 +22,7 @@ router.post('/perfil/:usuario', (req, res) => {
                     }
                 }
                 userDados = {
+                    _id: usuario._id,
                     nome: usuario.nome,
                     usuario: usuario.usuario,
                     avatar: usuario.avatar,
@@ -33,8 +34,12 @@ router.post('/perfil/:usuario', (req, res) => {
                     postagens: postagens,
                     usuario: userDados
                 })
+            }).catch((erro) => {
+                res.json({errorUser: 'Houve um erro ao mostrar este perfil', errorAdmin: erro})
             })
         }
+    }).catch((erro) => {
+        res.json({errorUser: 'Houve um erro ao mostrar este perfil', errorAdmin: erro})
     })
 })
 

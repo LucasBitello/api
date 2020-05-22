@@ -10,16 +10,20 @@ const Postagem = mongoose.model('postagens')
 
 router.post('/:id', (req, res) => {
     const resolve = jwt.decode(req.headers.authorization)
-    Usuario.findOne({_id: resolve.id}).then((usuario) => {
-        var coment = [String(usuario._id), String(req.body.coment), String(Math.floor(Math.random() * 65487875))]
-        Postagem.updateOne({_id: String(req.params.id)}, {$push: {comentarios_texto: coment}}).then(() => {
-            res.json('ok')
+    if(resolve.id){
+        Usuario.findOne({_id: resolve.id}).then((usuario) => {
+            var coment = [String(usuario._id), String(req.body.coment), String(Math.floor(Math.random() * 65487875))]
+            Postagem.updateOne({_id: String(req.params.id)}, {$push: {comentarios_texto: coment}}).then(() => {
+                res.json('ok')
+            }).catch((erro) => {
+                res.json({errorUser: 'Não foi possivel fazer o comentario, postagem ja foi deletada', errorAdmin: erro})
+            })
         }).catch((erro) => {
-            res.json({errorUser: 'Não foi possivel fazer o comentario, postagem ja foi deletada', errorAdmin: erro})
+            res.json({errorUser: 'Não foi possivel fazer o comentario', errorAdmin: erro})
         })
-    }).catch((erro) => {
-        res.json({errorUser: 'Não foi possivel fazer o comentario', errorAdmin: erro})
-    })
+    }else{
+        res.json({errorUser: 'Você precisa fazer login para poder comentar'})
+    }
 })
 
 router.post('/:id/delet/:idcoment', (req, res) => {
