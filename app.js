@@ -63,10 +63,12 @@ app.use(express.static(path.join(__dirname, "public")))
     //Arquivos
         const homeMob = require('./router/mobile/home')
         const perfil = require('./router/mobile/perfil')
+        const verifOn = require('./router/mobile/verifOn')
     //rotas
         app.use('/mobile', homeMob)
         app.use('/mobile', perfil)
         app.use('/mobile', perfilOuther)
+        app.use('/mobile', verifOn)
 
 //Servidor
 const PORT = 3000
