@@ -13,7 +13,7 @@ router.post('/', (req, res) => {
     if(resolve.id){
         Usuario.findOne({_id: resolve.id}).then((usuario) => {
             const {page} = req.query
-            Postagem.paginate({}, {page, limit: 5}).sort({'date': 'asc'}).then((postagens) => {
+            Postagem.paginate({}, {page, limit: 5, sort: {createdAt: 1}}).then((postagens) => {
                 for(var i = 0; i < postagens.docs.length; i++){
                     var id_para_avatar = postagens.docs[i].responsavel_id
                     Usuario.findOne({_id: id_para_avatar}).then((user_para_avatar) => {
