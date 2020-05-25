@@ -17,7 +17,9 @@ router.post('/', (req, res) => {
                 for(var i = 0; i < postagens.docs.length; i++){
                     var id_para_avatar = postagens.docs[i].responsavel_id
                     Usuario.findOne({_id: id_para_avatar}).then((user_para_avatar) => {
-                        postagens.docs[i].avatar = user_para_avatar.avatar || 'https://thumbs.dreamstime.com/z/imita%C3%A7%C3%A3o-do-fundo-transparente-69028332.jpg'
+                        postagens.docs[i].avatar = String(user_para_avatar.avatar) || 'https://thumbs.dreamstime.com/z/imita%C3%A7%C3%A3o-do-fundo-transparente-69028332.jpg'
+                    }).catch((erro) => {
+                        console.log(erro)
                     })
                     if(postagens.docs[i].curtidas_id.indexOf(usuario._id) > -1){
                         postagens.docs[i].se_curtiu = true

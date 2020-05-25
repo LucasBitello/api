@@ -44,7 +44,7 @@ const Postagens = new Schema({
     },
 
     comentarios_texto: [{
-        type: String
+        type: Array
     }],
 
     comentarios_id: [{
@@ -90,6 +90,7 @@ const Postagens = new Schema({
     },
     avatar: {
         type: String,
+        default: ''
     }
 })
 

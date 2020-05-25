@@ -14,8 +14,9 @@ router.post('/:id', (req, res) => {
         Usuario.findOne({_id: resolve.id}).then((usuario) => {
             var coment = [String(usuario._id), String(usuario.usuario), String(req.body.coment), String(Math.floor(Math.random() * 65487875))]
             Postagem.updateOne({_id: String(req.params.id)}, {$push: {comentarios_texto: coment}}).then(() => {
-                res.json('ok')
+                res.json({sucesso: 'ok'})
             }).catch((erro) => {
+                console.log(erro)
                 res.json({errorUser: 'Não foi possivel fazer o comentario, postagem ja foi deletada', errorAdmin: erro})
             })
         }).catch((erro) => {
