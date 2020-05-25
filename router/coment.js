@@ -12,7 +12,7 @@ router.post('/:id', (req, res) => {
     const resolve = jwt.decode(req.headers.authorization)
     if(resolve.id){
         Usuario.findOne({_id: resolve.id}).then((usuario) => {
-            var coment = [[String(usuario._id), String(usuario.usuario), String(req.body.coment), String(Math.floor(Math.random() * 65487875))]]
+            var coment = [String(usuario._id), String(usuario.usuario), String(req.body.coment), String(Math.floor(Math.random() * 65487875))]
             Postagem.updateOne({_id: String(req.params.id)}, {$push: {comentarios_texto: coment}}).then(() => {
                 res.json('ok')
             }).catch((erro) => {
