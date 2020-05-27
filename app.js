@@ -47,12 +47,14 @@ app.use(express.static(path.join(__dirname, "public")))
         const curtir = require('./router/curtir')
         const coment = require('./router/coment')
         const perfilOuther = require('./router/mobile/perfilOuther')
+        const showcoment = require('./router/showComent')
     //rotas
         app.use('/cadastro', cadastro)
         app.use('/login', login)
         app.use('/novopost', novoPost)
         app.use('/curtirpost', curtir)
         app.use('/coment', coment)
+        app.use('/showcoment', showcoment)
 //Rotas Web
     //Arquivos
         const homeWeb = require('./router/web/home') 
