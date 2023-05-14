@@ -1,0 +1,3 @@
+# api
+
+Api para uma rede social de MEMEs, descontinuada...
